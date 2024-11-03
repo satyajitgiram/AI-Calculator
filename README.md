@@ -1,50 +1,152 @@
-# React + TypeScript + Vite
+# AI Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the complete code for the AI Calculator application, featuring both the frontend built with React and the backend developed in Python. This application provides an interactive user interface for performing calculations while communicating seamlessly with backend APIs.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Frontend
+- User-friendly interface for performing calculations
+- Responsive design for optimal viewing on various devices
+- Integration with the Python backend for real-time calculations
 
-- Configure the top-level `parserOptions` property like this:
+### Backend
+- Simple and efficient API for performing calculations
+- Supports multiple calculation methods
+- Easy to extend and customize
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Requirements
+
+### Frontend
+- Node.js (version 14 or higher)
+- npm (Node package manager)
+
+### Backend
+- Python 3.12 or higher
+- pip (Python package installer)
+
+## Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/satyajitgiram/AI-Calculator
+cd AI-Calculator
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Frontend Setup
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Navigate to the Frontend directory:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   cd Frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Backend Setup
+
+1. Navigate to the Backend directory:
+
+   ```bash
+   cd Backend
+   ```
+
+2. Set up a virtual environment:
+
+   ```bash
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+
+   - On Windows:
+
+     ```bash
+     venv\Scripts\activate
+     ```
+
+   - On macOS/Linux:
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Frontend
+
+1. Start the frontend development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be accessible at `http://localhost:5173/` by default.
+
+2. Build for production (optional):
+
+   To create an optimized production build, run:
+
+   ```bash
+   npm run build
+   ```
+
+   The build artifacts will be stored in the `build` directory.
+
+### Backend
+
+1. Run the backend server:
+
+   After installing the dependencies, you can start the server using:
+
+   ```bash
+   python main.py
+   ```
+
+   The application will run at `http://127.0.0.1:8900` by default. You can modify the port or host in the `constants.py` file if needed.
+
+## API Integration
+
+The frontend communicates with the backend APIs to perform calculations. Ensure that your backend server is running at `http://127.0.0.1:8900` and update the API endpoints in the frontend code if necessary in the `.env.local` file.
+
+## API Endpoints
+
+Here are some example endpoints available in the backend:
+
+- **GET** `/health` - Check server health status
+- **POST** `/calculate` - Perform complex calculations
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
