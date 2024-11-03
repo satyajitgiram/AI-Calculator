@@ -1,6 +1,6 @@
-fastapi 
-pillow 
-uvicorn 
-pydantic 
+fastapi==0.115.2
+pillow==11.0.0
+uvicorn==0.32.0
+pydantic==2.9.2
 google-generativeai==0.7.2
-python-dotenv
+python-dotenv==1.0.1
