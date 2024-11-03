@@ -1,0 +1,17 @@
+
+/* Button sizing and spacing */
+.flex.items-center.gap-2.p-4 {
+  max-width: 800px; /* Set a max width for the control bar */
+  margin: 0 auto;   /* Center the bar */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Loading spinner animation */
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
