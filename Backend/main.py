@@ -19,10 +19,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.get('/')
+@app.get('/health')
 async def health_check():
     return {"message": "Server is running"}
-
 
 app.include_router(calculator_router, prefix="/calculate", tags=["calculate"])
 
